@@ -10,12 +10,14 @@ const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 // sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
 const socialLinks = document.querySelectorAll(".social-link");
-socialLinks.forEach(link => {
-    const firstChild = link.firstElementChild; // Selects the ion-icon
-    if (firstChild.clientHeight === 0) {
-      elementToggleFunc(link.querySelector(".alternate")); // Activate alternate class
-    }
-});
+setTimeout(() => {
+  socialLinks.forEach(link => {
+      const firstChild = link.firstElementChild; // Selects the ion-icon
+      if (firstChild.clientHeight === 0) {
+        elementToggleFunc(link.querySelector(".alternate")); // Activate alternate class
+      }
+  });
+}, 3000);
 
 
 // testimonials variables
@@ -115,22 +117,88 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 // contact form variables
 const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
+const formInput = document.querySelector("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
 // add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
+formInput.addEventListener("input", function () {
 
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
+  // check form validation
+  if (form.checkValidity()) {
+    formBtn.removeAttribute("disabled");
+  } else {
+    formBtn.setAttribute("disabled", "");
+  }
+});
 
-  });
-}
+// https://stackoverflow.com/a/8664535
+form.addEventListener("submit", function(evt) {
+  evt.preventDefault();
+  window.history.back();
+}, true);
+
+const tooltip = document.getElementById("contact-form-tooltip");
+formBtn.addEventListener("onhover", function () {
+  tooltip.innerHTML = "Copy to clipboard?";
+});
+formBtn.addEventListener("onmouseout", function () {
+  tooltip.innerHTML = "The content was copied, now paste it in LinkedIn!";
+});
+
+const linkedinLink = document.getElementById("linkedinLink");
+
+// https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+formBtn.addEventListener("click", function () {
+  // Get the text field
+  var copyText = document.getElementById("contact-form-message");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+  tooltip.innerHTML = "The content was copied, now paste it in LinkedIn, thanks xD";
+
+  // Add glow and casino effect
+  linkedinLink.classList.add("glow", "casino-arrows");
+
+  // Check if left arrow exists, if not, create it
+  // if (!document.querySelector(".arrow-left")) {
+  //     let leftArrow = document.createElement("span");
+  //     leftArrow.classList.add("arrow-left");
+  //     leftArrow.textContent = "➡️"; // Correctly set content
+  //     linkedinLink.appendChild(leftArrow);
+  // }
+
+  // Check if right arrow exists, if not, create it
+  // if (!document.querySelector(".arrow-right")) {
+  //     let rightArrow = document.createElement("span");
+  //     rightArrow.classList.add("arrow-right");
+  //     rightArrow.textContent = "⬅️"; // Correctly set content
+  //     linkedinLink.appendChild(rightArrow);
+  // }
+
+  // Remove effect after 3 seconds
+  setTimeout(() => {
+      linkedinLink.classList.remove("glow", "casino-arrows");
+      document.querySelectorAll(".arrow-left, .arrow-right").forEach(el => el.remove());
+  }, 15000);
+
+  return false;
+});
+
+linkedinLink.addEventListener("click", function() {
+  let firecracker = document.getElementById("firecracker");
+
+  // Show the firecracker effect and trigger the animation
+  firecracker.style.display = "block";
+
+  // Hide the firecracker effect after the animation ends
+  setTimeout(function() {
+    firecracker.style.display = "none";
+  }, 500);
+});
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");

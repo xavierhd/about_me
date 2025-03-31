@@ -61,7 +61,7 @@
 
       </div>
 
-      <div class="sidebar-info_more">
+      <div class="sidebar-info_more" style="z-index: 0;">
 
         <div class="separator"></div>
 
@@ -89,14 +89,15 @@
           
           <li class="social-item">
             <a href="https://github.com/xavierhd" class="social-link">
-              <ion-icon name="logo-linkedin" alt="logo LinkedIn"></ion-icon>
+              <ion-icon name="logo-github" alt="logo Github"></ion-icon>
               <p class="alternate">Github</p>
             </a>
           </li>
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/xavier-hudon-dansereau/" class="social-link">
-              <ion-icon name="logo-facebook" alt="logo LinkedIn"></ion-icon>
+            <a href="https://www.linkedin.com/in/xavier-hudon-dansereau/" class="social-link linkedin-social" id="linkedinLink">
+              <ion-icon name="logo-linkedin" alt="logo LinkedIn"></ion-icon>
               <p class="alternate">LinkedIn</p>
+              <div id="firecracker" class="hidden"></div>
             </a>
           </li>
 
@@ -1206,21 +1207,13 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
+          <form action="#" class="form" id="contact-form"data-form>
+            <textarea name="message" id="contact-form-message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <button class="tooltip form-btn" type="submit"id="triggerEffect" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
+              <span>Send message</span>
+              <span class="tooltip-text" id="contact-form-tooltip">Copy to clipboard?</span>
             </button>
-
           </form>
 
         </section>

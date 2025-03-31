@@ -1,6 +1,7 @@
 /*-----------------------------------*\
   #style.css
 \*-----------------------------------*/
+
 .inline {
   display: flex;
   align-items: center;
@@ -16,6 +17,200 @@
 .timeline-title-text {
   display: flex;
   flex-direction: column;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.alternate {
+  display: none;
+}
+.alternate.active {
+  display: block;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.8);
+  animation: neonGlow 0.5s infinite alternate;
+}
+
+/* Casino-style arrows container */
+.casino-arrows {
+  position: relative;
+}
+
+/* Top and bottom arrows using ::before and ::after */
+.casino-arrows::before,
+.casino-arrows::after {
+  z-index: 100;
+  position: absolute;
+  font-size: 40px; /* Bigger arrows */
+  color: gold;
+  text-shadow: 0 0 10px red, 0 0 20px yellow, 0 0 30px orange;
+  animation: arrowMove 0.7s infinite alternate ease-in-out, glitter 0.5s infinite alternate;
+}
+
+/* Arrow from above */
+.casino-arrows::before {
+  content: url('../images/casino_arrow_pointing_down.PNG');
+  height: 128px;
+  width: 128px;
+  top: -128px;
+  left: calc(-64px + 50%);
+  transform: translateX(-50%);
+}
+
+/* Arrow from below */
+/* .casino-arrows::after {
+  content: url('../images/casino_arrow_pointing_up.png');
+  height: 128px;
+  width: 128px;
+  bottom: -128px;
+  left: calc(-64px + 50%);
+  transform: translateX(-50%);
+} */
+
+/* Left and right arrows (added dynamically) */
+/* .arrow-left, .arrow-right {
+  z-index: 100;
+  position: absolute;
+  font-size: 50px;
+  color: gold;
+  text-shadow: 0 0 10px red, 0 0 20px yellow, 0 0 30px orange;
+  animation: arrowMove 0.7s infinite alternate ease-in-out, glitter 0.5s infinite alternate;
+} */
+
+/* Arrow from left */
+/* .arrow-left {
+  content: url('../images/casino_arrow_pointing_up.png');
+  left: -128px;
+  top: 50%;
+  transform: rotate(270deg) translateY(-50%);
+} */
+
+/* Arrow from right */
+/* .arrow-right {
+  content: url('../images/casino_arrow_pointing_up.png');
+  right: -128px;
+  top: 50%;
+  transform: rotate(90deg) translateY(-50%);
+} */
+
+/* Pulsing neon glow effect */
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0 0 30px 15px rgba(255, 215, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 50px 20px rgba(255, 140, 0, 1);
+    }
+}
+
+/* Arrows moving slightly */
+@keyframes arrowMove {
+    0% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(8px);
+    }
+}
+
+/* Glitter sparkle effect */
+@keyframes glitter {
+    0% {
+        opacity: 0.8;
+        text-shadow: 0 0 15px red, 0 0 25px yellow, 0 0 35px orange;
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 20px yellow, 0 0 30px red, 0 0 40px orange;
+    }
+}
+
+#linkedinLink {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#linkedinLink:active {
+  transform: scale(0.9);
+}
+
+#firecracker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: orange;
+  border-radius: 50%;
+  box-shadow: 0 0 10px yellow, 0 0 20px orange;
+  opacity: 0;
+  pointer-events: none;
+  animation: explode 0.5s forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes explode {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    width: 100px;
+    height: 100px;
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(3);
+  }
 }
 
 /**
@@ -455,7 +650,7 @@ main {
 
 .social-item .social-link {
   color: var(--light-gray-70);
-  font-size: 18px;
+  font-size: 40px;
 }
 
 
