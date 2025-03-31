@@ -1,7 +1,22 @@
 /*-----------------------------------*\
   #style.css
 \*-----------------------------------*/
+.inline {
+  display: flex;
+  align-items: center;
+}
 
+.inline img {
+  max-height: 40px;
+  width: auto;
+  max-width: 70px;
+  margin-right: 10px;
+  border-radius: 5%;
+}
+.timeline-title-text {
+  display: flex;
+  flex-direction: column;
+}
 
 /**
  * copyright 2022 @codewithsadee
@@ -1138,7 +1153,7 @@ main {
   width: 100%;
   height: 100%;
   border: none;
-  filter: grayscale(1) invert(1);
+  filter: contrast(100%) sepia(30%) saturate(80%) grayscale(0) invert(0);
 }
 
 .contact-form { margin-bottom: 10px; }
@@ -1223,6 +1238,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
+.main-avatar-box img {
+  border-radius: 5%;
+}
 
 
 /*-----------------------------------*\

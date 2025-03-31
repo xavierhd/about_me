@@ -42,7 +42,9 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Xavier HD" width="80">
+          <div class="main-avatar-box">
+            <img src="./assets/images/moi.png" alt="Xavier HD" width="80">
+          </div>
         </figure>
 
         <div class="info-content">
@@ -50,12 +52,12 @@
 
           <p class="title">Full stack everything</p>
         </div>
-
+<!-- 
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
 
           <ion-icon name="chevron-down"></ion-icon>
-        </button>
+        </button> -->
 
       </div>
 
@@ -68,7 +70,7 @@
           <li class="contact-item">
 
             <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
+              <ion-icon name="location-outline" alt="location icon"></ion-icon>
             </div>
 
             <div class="contact-info">
@@ -84,16 +86,17 @@
         <div class="separator"></div>
 
         <ul class="social-list">
-
+          
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
+            <a href="https://github.com/xavierhd" class="social-link">
+              <ion-icon name="logo-linkedin" alt="logo LinkedIn"></ion-icon>
+              <p class="alternate">Github</p>
             </a>
           </li>
-
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
+            <a href="https://www.linkedin.com/in/xavier-hudon-dansereau/" class="social-link">
+              <ion-icon name="logo-facebook" alt="logo LinkedIn"></ion-icon>
+              <p class="alternate">LinkedIn</p>
             </a>
           </li>
 
@@ -129,13 +132,13 @@
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
-          <li class="navbar-item">
+          <!-- <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
+          </li> -->
 
-          <li class="navbar-item">
+          <!-- <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
+          </li> -->
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
@@ -525,14 +528,16 @@
           <ol class="timeline-list">
 
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">
-                <p>Baccalaureat in Software Engineering</p>
-                <p>University École de Technologie Supérieure de Montréal</p>
+                <div class="inline">
+                  <img src="https://www.etsmtl.ca/assets/img/ets.svg" alt="logo etsmtl"/>
+                  <div class="timeline-title-text">
+                    <p>Baccalaureat in Software Engineering</p>
+                    <p><a target="_blank" href="https://www.etsmtl.ca/">@University École de Technologie Supérieure de Montréal</a></p>
+                  </div>
+                </div>
               </h4>
-
               <span>2015 — 2019</span>
-
               <p class="timeline-text">
                 Data structures, science and analisis, algorithms and architectures,
                 project management, specification writing, cybersecurity,
@@ -541,21 +546,27 @@
             </li>
 
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">
-                <p>College diploma in computer science management</p>
-                <p>CÉGEP du Vieux Montréal</p>
+                <div class="inline">
+                  <a target="_blank" href="https://www.cvm.qc.ca/">
+                    <img src="./assets/images/logo-cvm.png" alt="logo cvm"/>
+                  </a>
+                  <div class="timeline-title-text">
+                    <p>College diploma in computer science management</p>
+                    <p>
+                      <a target="_blank" href="https://www.cvm.qc.ca/">
+                        @CÉGEP du Vieux Montréal
+                      </a>
+                    </p>
+                  </div>
+                </div>
               </h4>
-
               <span>2012 — 2015</span>
-
               <p class="timeline-text">
                 Software development, network administration, database and operating systems management, cloud computing
               </p>
-
             </li>
           </ol>
-
         </section>
 
         <section class="timeline">
@@ -568,24 +579,105 @@
 
           <ol class="timeline-list">
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Flight Simulation System Integrator</h4>
+              <h4 class="h4 timeline-item-title">
+                <div class="inline">
+                  <a target="_blank" href="https://www.cae.com/about-cae">
+                    <img src="https://www.cae.com/assets/img/new-cae-white.png" alt="logo cae"/>
+                  </a>
+                  <div class="timeline-title-text">
+                    <p>Flight Simulation System Integrator</p>
+                    <p>
+                      <a target="_blank" href="https://www.cae.com/about-cae">
+                        @CAE
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </h4>
               <span>2023 — Present</span>
               <p class="timeline-text">
-                Prepare, adapt and install the servers of full flight training device for airline pilots formation. My role is at the crossroad between QA, mecanic, electrician, sofware and project management.
+                Prepare, adapt and install the servers of full flight training device for airline pilots formation.
+                <p class="timeline-text">My role is at the crossroad between QA, mecanic, electrician, sofware and project management.</p>
               </p>
             </li>
 
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">World exploration</h4>
+              <h4 class="h4 timeline-item-title">
+                <div class="inline">
+                  <img src="./assets/images/icon-travel.svg" alt="logo travel"/>
+                  <div class="timeline-title-text">
+                    <span>World exploration</span>
+                    <a target="_blank" href="https://www.cae.com/about-cae">
+                      @All the Americas
+                    </a>
+                  </div>
+                </div>
+              </h4>
               <span>2022 — 2023</span>
               <p class="timeline-text">
-                With a friend, each with a motorcycle, we crossed the entire American continent from Montreal to Buenos Aires, Argentina. This trip taught me a lot about people, culture, the world and myself. This experience reshaped my approach to communication and understanding. It is also when I perfected my spanish! 
+                With a friend, each with a motorcycle, we crossed the entire American continent from Montreal to Buenos Aires, Argentina.
+                This trip taught me a lot about people, culture, the world and myself. This experience reshaped my approach to communication and understanding.
+              </p>
+              <p class="timeline-text">It is also when I perfected my Spanish!</p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                <div class="inline">
+                  <a target="_blank" href="https://labplas.com/en_US/">
+                    <img src="https://labplas.com/media/logo/stores/4/logo-labplas-en-v2.png" alt="logo labplas"/>
+                  </a>
+                  <div class="timeline-title-text">
+                    <span>Full stack engineer</span>
+                    <a target="_blank" href="https://labplas.com/en_US/">
+                      @Labplas
+                    </a>
+                  </div>
+                </div>
+              </h4>
+              <span>2017 — 2022</span>
+              <p class="timeline-text">
+                Here I started as a Jira admin and broadened the scope to develop and integrate differents systems like
+                Amazon, Jira, Epicor and other internal tools.
+                <p class="timeline-text">I had to lead the development of many ground zero applications and tools enhancing the productivity of the company.</p>
               </p>
             </li>
 
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Full stack engineer</h4>
-              <span>2017 — 2022</span>
+              <h4 class="h4 timeline-item-title">
+                <div class="inline">
+                  <a target="_blank" href="https://www.ericsson.com/en">
+                    <img src="./assets/images/Ericsson_logo.svg" alt="logo ericsson"/>
+                  </a>
+                  <div class="timeline-title-text">
+                    <span>DevOps internship</span>
+                    <a target="_blank" href="https://www.ericsson.com/en">
+                      @Ericsson
+                    </a>
+                  </div>
+                </div>
+              </h4>
+              <span>2019</span>
+              <p class="timeline-text">
+                Here I started as a Jira admin and broadened the scope to develop and integrate differents systems like Amazon, Jira, Epicor and other internal tools. I had to lead the development of many ground zero applications and tools enhancing the productivity of the company.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                <div class="inline">
+                  <a target="_blank" href="https://www.nuecho.com/">
+                    <img src="https://www.nuecho.com/wp-content/uploads/2019/03/bottom-logo.png" alt="logo ericsson"/>
+                  </a>
+                  <div class="timeline-title-text">
+                    <span>Innovation team, conversational agent internship</span>
+                    <a target="_blank" href="https://www.nuecho.com/">
+                      @Nu Echo
+                    </a>
+                  </div>
+                </div>
+              </h4>
+              <span>2019</span>
               <p class="timeline-text">
                 Here I started as a Jira admin and broadened the scope to develop and integrate differents systems like Amazon, Jira, Epicor and other internal tools. I had to lead the development of many ground zero applications and tools enhancing the productivity of the company.
               </p>
@@ -608,11 +700,11 @@
 
             <li class="skills-item">
               <div class="title-wrapper">
-                <h5 class="h5">Undestanding needs</h5>
-                <data value="70">100%</data>
+                <h5 class="h5">Undestanding needs in many languages</h5>
+                <data value="95">95%</data>
               </div>
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
+                <div class="skill-progress-fill" style="width: 95%;"></div>
               </div>
             </li>
 
@@ -623,6 +715,17 @@
               </div>
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+            </li>
+
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Python & C#</h5>
+                <data value="95">95%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 95%;"></div>
               </div>
             </li>
 
@@ -650,7 +753,8 @@
         - #PORTFOLIO
       -->
 
-      <article class="portfolio" data-page="portfolio">
+      <article class="portfolio">
+         <!-- data-page="portfolio"> -->
 
         <header>
           <h2 class="h2 article-title">Portfolio</h2>
@@ -890,7 +994,8 @@
         - #BLOG
       -->
 
-      <article class="blog" data-page="blog">
+      <article class="blog">
+         <!-- data-page="blog"> -->
 
         <header>
           <h2 class="h2 article-title">Blog</h2>
@@ -1091,8 +1196,9 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d298472.8641263102!2d-73.73733305637074!3d45.52112681736896!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a541c64b70d%3A0x654e3138211fefef!2zTW9udHLDqWFsLCBRQw!5e0!3m2!1sfr!2sca!4v1743385183365!5m2!1sfr!2sca"
               width="400" height="300" loading="lazy"></iframe>
+              <!-- width="600" height="450" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" -->
           </figure>
         </section>
 

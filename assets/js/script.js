@@ -4,11 +4,19 @@
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
 // sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-
+// const sidebar = document.querySelector("[data-sidebar]");
+// const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+// sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+
+const socialLinks = document.querySelectorAll(".social-link");
+socialLinks.forEach(link => {
+    const firstChild = link.firstElementChild; // Selects the ion-icon
+    if (firstChild.clientHeight === 0) {
+      elementToggleFunc(link.querySelector(".alternate")); // Activate alternate class
+    }
+});
+
 
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
