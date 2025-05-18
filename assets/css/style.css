@@ -19,6 +19,16 @@
   flex-direction: column;
 }
 
+.timeline-title-text a:link {
+  color: hsl(215, 50%, 55%);
+}
+.timeline-title-text a:visited {
+  color: hsl(215, 30%, 40%);
+}
+.timeline-title-text a:hover {
+  color: hsl(215, 30%, 80%);
+}
+
 .tooltip {
   position: relative;
   display: inline-block;
@@ -96,42 +106,6 @@
   transform: translateX(-50%);
 }
 
-/* Arrow from below */
-/* .casino-arrows::after {
-  content: url('../images/casino_arrow_pointing_up.png');
-  height: 128px;
-  width: 128px;
-  bottom: -128px;
-  left: calc(-64px + 50%);
-  transform: translateX(-50%);
-} */
-
-/* Left and right arrows (added dynamically) */
-/* .arrow-left, .arrow-right {
-  z-index: 100;
-  position: absolute;
-  font-size: 50px;
-  color: gold;
-  text-shadow: 0 0 10px red, 0 0 20px yellow, 0 0 30px orange;
-  animation: arrowMove 0.7s infinite alternate ease-in-out, glitter 0.5s infinite alternate;
-} */
-
-/* Arrow from left */
-/* .arrow-left {
-  content: url('../images/casino_arrow_pointing_up.png');
-  left: -128px;
-  top: 50%;
-  transform: rotate(270deg) translateY(-50%);
-} */
-
-/* Arrow from right */
-/* .arrow-right {
-  content: url('../images/casino_arrow_pointing_up.png');
-  right: -128px;
-  top: 50%;
-  transform: rotate(90deg) translateY(-50%);
-} */
-
 /* Pulsing neon glow effect */
 @keyframes neonGlow {
     0% {
@@ -164,28 +138,13 @@
     }
 }
 
-#linkedinLink {
+.social-link, .navbar-link {
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.2s;
 }
 
-#linkedinLink:active {
+.social-link:active, .navbar-link:active {
   transform: scale(0.9);
-}
-
-#firecracker {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0;
-  height: 0;
-  background-color: orange;
-  border-radius: 50%;
-  box-shadow: 0 0 10px yellow, 0 0 20px orange;
-  opacity: 0;
-  pointer-events: none;
-  animation: explode 0.5s forwards;
 }
 
 .hidden {
